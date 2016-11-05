@@ -36,6 +36,8 @@ namespace FormMainMenu
             txtDireccionCliente.Enabled = true;
             cboCiudad.Enabled = true;
             cboComuna.Enabled = true;
+            cboCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cboComuna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList; 
         }
 
         private void limpia()
@@ -252,6 +254,27 @@ namespace FormMainMenu
                     lstClientes.Enabled = true;                 
                     gprDatos.Enabled = true;
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un problema." + Convert.ToString(ex));
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                XElement cli = xmldoc.Descendants("Cliente").FirstOrDefault(p => p.Element("id").Value == txtRutCliente.Text);
+                if (cli != null)
+                {
+                    cli.Remove();
+                    xmldoc.Save(tempurl);
+                    llenarLista();
+                    limpia();
+                    habilitar();
+                }
+                Bloquear();
             }
             catch (Exception ex)
             {
