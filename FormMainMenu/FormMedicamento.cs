@@ -68,6 +68,14 @@ namespace FormMainMenu
                     txtNombreMedicamento.Text = emp.Element("nombre").Value;
                     txtPrecio.Text = emp.Element("precio").Value;
                     txtStock.Text = emp.Element("stock").Value;
+                    if (emp.Element("receta").Value.Equals("Si"))
+                    {
+                        checkReceta.Checked = true;
+                    }
+                    else
+                    {
+                        checkReceta.Checked = false;
+                    }
 
 
                 }
@@ -84,6 +92,17 @@ namespace FormMainMenu
             string codigoMedicamento = txtCodigoMedicamento.Text;
             string precioMedicamento = txtPrecio.Text;
             string stockMedicamento = txtStock.Text;
+            string recetaRetenida = String.Empty;
+
+            //Comprobar si la receta está retenida o no
+            if (checkReceta.Checked)
+            {
+                recetaRetenida = "Si";
+            }
+            else
+            {
+                recetaRetenida = "No";
+            }
 
             habilitar();
             try
@@ -107,7 +126,8 @@ namespace FormMainMenu
                         new XElement("id", codigoMedicamento),
                         new XElement("nombre", nombreMedicamento),
                         new XElement("precio", stockMedicamento),
-                        new XElement("stock", stockMedicamento));
+                        new XElement("stock", stockMedicamento),
+                        new XElement("receta", recetaRetenida));
                         xmldoc.Root.Add(med);
                         xmldoc.Save(Application.StartupPath + "\\archivos\\medicamentos.xml");
                         btnAgregar.Text = "Agregar";
@@ -142,6 +162,17 @@ namespace FormMainMenu
             string codigoMedicamento = txtCodigoMedicamento.Text;
             string precioMedicamento = txtPrecio.Text;
             string stockMedicamento = txtStock.Text;
+            string recetaRetenida = String.Empty;
+
+            //Comprobar si la receta está retenida o no
+            if (checkReceta.Checked)
+            {
+                recetaRetenida = "Si";
+            }
+            else
+            {
+                recetaRetenida = "No";
+            }
 
             habilitar();
             try
@@ -163,8 +194,17 @@ namespace FormMainMenu
                         emp.Remove();
                         emp.Element("id").Value = txtCodigoMedicamento.Text;
                         emp.Element("nombre").Value = txtNombreMedicamento.Text;
-                        emp.Element("precio").Value = txtPrecio.Text;
+                        emp.Element("precio").Value = txtPrecio.Text;                   
                         emp.Element("stock").Value = txtStock.Text;
+                        //Comprobar si la receta está retenida o no
+                        if (checkReceta.Checked == true)
+                        {
+                            emp.Element("receta").Value = "Si";
+                        }
+                        else
+                        {
+                            emp.Element("receta").Value = "No";
+                        }
                         xmldoc.Root.Add(emp);
                         xmldoc.Save(tempurl);
                         MessageBox.Show("se modificó el registro");
