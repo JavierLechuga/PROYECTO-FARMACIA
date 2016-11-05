@@ -39,9 +39,20 @@ namespace FormMainMenu
 
         }
 
+        private void Bloquear()
+        {
+            btnAgregar.Enabled = true;
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
+            txtCodigoMedicamento.Enabled = false;
+            txtNombreMedicamento.Enabled = false;
+            txtPrecio.Enabled = false;
+            txtStock.Enabled = false;
+            checkReceta.Enabled = false;
+        }
+
         private void habilitar()
         {
-
             txtCodigoMedicamento.Enabled = true;
             txtNombreMedicamento.Enabled = true;
             txtPrecio.Enabled = true;
@@ -135,6 +146,7 @@ namespace FormMainMenu
                         limpia();
                         lstMedicamentos.Enabled = true;
                         llenarLista();
+                        Bloquear();
                     }
 
                 }
@@ -153,6 +165,8 @@ namespace FormMainMenu
         private void FormMedicamento_Load(object sender, EventArgs e)
         {
             this.lstMedicamentos.DataSource = XDocument.Load(Application.StartupPath + "\\archivos\\medicamentos.xml").Descendants().Where(med => med.Name == "id").Select(med => med.Value).ToList();
+            limpia();
+            Bloquear();
         }
 
 
@@ -218,7 +232,7 @@ namespace FormMainMenu
                     btnModificar.Text = "Modificar";
                     lstMedicamentos.Enabled = true;
                     gprDatos.Enabled = true;
-                    habilitar();
+                    Bloquear();
                 }
             }
             catch (Exception ex)
@@ -240,6 +254,7 @@ namespace FormMainMenu
                     limpia();
                     habilitar();
                 }
+                Bloquear();
             }
             catch (Exception ex)
             {

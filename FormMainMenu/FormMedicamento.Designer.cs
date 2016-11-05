@@ -60,7 +60,7 @@
             // 
             this.checkReceta.AutoSize = true;
             this.checkReceta.Enabled = false;
-            this.checkReceta.Location = new System.Drawing.Point(106, 221);
+            this.checkReceta.Location = new System.Drawing.Point(106, 203);
             this.checkReceta.Name = "checkReceta";
             this.checkReceta.Size = new System.Drawing.Size(15, 14);
             this.checkReceta.TabIndex = 14;
@@ -101,7 +101,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 221);
+            this.label5.Location = new System.Drawing.Point(17, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 5;

@@ -46,7 +46,6 @@ namespace FormMainMenu
             cboCiudad.SelectedIndex = -1;
             cboComuna.SelectedIndex = -1;
             cboComuna.Text = "";
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -185,8 +184,7 @@ namespace FormMainMenu
             txtNombreCliente.Enabled = false;
             txtDireccionCliente.Enabled = false;
             cboCiudad.Enabled = false;
-            cboComuna.Enabled = false;
-            
+            cboComuna.Enabled = false;            
         }
 
 
