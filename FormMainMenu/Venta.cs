@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml;
 
+
 namespace FormMainMenu
 {
     public partial class Venta : Form
@@ -26,8 +27,25 @@ namespace FormMainMenu
             InitializeComponent();
         }
 
+        public void BindGrid()
+        {
+            try
+            {
+                XmlReader xmlFile;
+                xmlFile = XmlReader.Create(Application.StartupPath + "\\archivos\\medicamentos.xml", new XmlReaderSettings());
+                DataSet ds = new DataSet();
+                ds.ReadXml(xmlFile);
+                dgvMedicamentos.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            } 
+        }  
+
         private void Venta_Load(object sender, EventArgs e)
         {
+            BindGrid();
             lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             lblNombreUsuario.Text = Login.currentUser;
             lblRutUsuario.Text = Login.rutUser;
@@ -123,6 +141,11 @@ namespace FormMainMenu
                     }
                 }
             }
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
 
         }
     }
