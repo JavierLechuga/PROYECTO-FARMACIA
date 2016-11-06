@@ -209,5 +209,87 @@ namespace FormMainMenu
                 MessageBox.Show("Selecciona un código de la lista para cargar la información.");
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                XElement ven = xmldoc.Descendants("Vendedor").FirstOrDefault(p => p.Element("id").Value == txtRutVendedor.Text);
+                if (ven != null)
+                {
+                    ven.Remove();
+                    xmldoc.Save(tempurl);
+                    llenarLista();
+                    limpia();
+                    habilitar();
+                }
+                Bloquear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un problema." + Convert.ToString(ex));
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string nombreVendedor = txtNombreVendedor.Text;
+                string rutVendedor = txtRutVendedor.Text;
+                string direccionVendedor = txtDireccion.Text;
+                string ciudad = String.Empty;
+                string comuna = String.Empty;
+                string contraseña = txtContraseña.Text;
+
+
+                if (btnModificar.Text == "Modificar")
+                {
+                    btnModificar.Text = "Actualizar";
+                    btnEliminar.Enabled = false;
+                    btnAgregar.Enabled = false;
+                    lstVendedores.Enabled = false;
+                    gprDatos.Enabled = true;
+                    txtRutVendedor.Focus();
+                    habilitar();
+                }
+                else
+                {
+                    XElement ven = xmldoc.Descendants("Vendedor").FirstOrDefault(p => p.Element("id").Value == txtRutVendedor.Text);
+                    if (ven != null)
+                    {
+                        ven.Remove();
+                        ven.Element("id").Value = txtRutVendedor.Text;
+                        ven.Element("nombre").Value = txtNombreVendedor.Text;
+                        ven.Element("direccion").Value = txtDireccion.Text;
+                        ven.Element("ciudad").Value = cboCiudad.SelectedItem.ToString();
+                        ven.Element("comuna").Value = cboComuna.SelectedItem.ToString();
+                        ven.Element("contrasena").Value = txtContraseña.Text;
+                        xmldoc.Root.Add(ven);
+                        xmldoc.Save(tempurl);
+                        MessageBox.Show("se modificó el registro");
+                        limpia();
+                        Bloquear();
+                        lstVendedores.Enabled = true;
+                        llenarLista();
+                    }
+                    Bloquear();
+                    btnAgregar.Enabled = true;
+                    btnModificar.Text = "Modificar";
+                    lstVendedores.Enabled = true;
+                    gprDatos.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un problema." + Convert.ToString(ex));
+            }
+        }
     }
 }
