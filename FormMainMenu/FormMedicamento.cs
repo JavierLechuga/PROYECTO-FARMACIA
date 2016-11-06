@@ -136,7 +136,7 @@ namespace FormMainMenu
                         XElement med = new XElement("Medicamento",
                         new XElement("id", codigoMedicamento),
                         new XElement("nombre", nombreMedicamento),
-                        new XElement("precio", stockMedicamento),
+                        new XElement("precio", precioMedicamento),
                         new XElement("stock", stockMedicamento),
                         new XElement("receta", recetaRetenida));
                         xmldoc.Root.Add(med);

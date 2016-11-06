@@ -400,7 +400,7 @@
             // 
             // dgvMedicamentos
             // 
-            this.dgvMedicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicamentos.AllowUserToResizeColumns = false;
             this.dgvMedicamentos.Location = new System.Drawing.Point(6, 211);
             this.dgvMedicamentos.Name = "dgvMedicamentos";
             this.dgvMedicamentos.Size = new System.Drawing.Size(754, 159);
