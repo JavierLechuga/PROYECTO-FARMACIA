@@ -72,6 +72,12 @@ namespace FormMainMenu
             cliente.Show();
         }
 
+        private void vendedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVendedor vendedor = new FormVendedor();
+            vendedor.Show();
+        }
+
 
 
     }

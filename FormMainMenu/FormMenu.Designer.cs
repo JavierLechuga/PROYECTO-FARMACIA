@@ -77,6 +77,7 @@
             this.vendedorToolStripMenuItem.Name = "vendedorToolStripMenuItem";
             this.vendedorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.vendedorToolStripMenuItem.Text = "Vendedor";
+            this.vendedorToolStripMenuItem.Click += new System.EventHandler(this.vendedorToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
