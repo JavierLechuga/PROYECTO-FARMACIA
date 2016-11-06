@@ -63,6 +63,8 @@
             this.btnVender = new System.Windows.Forms.Button();
             this.dgvMedicamentos = new System.Windows.Forms.DataGridView();
             this.lblNombreCliente = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -171,7 +173,7 @@
             this.groupBox2.Controls.Add(this.txtRutCliente);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(12, 194);
+            this.groupBox2.Location = new System.Drawing.Point(408, 59);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(370, 129);
             this.groupBox2.TabIndex = 1;
@@ -215,6 +217,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblTotal);
+            this.groupBox3.Controls.Add(this.lbl2);
             this.groupBox3.Controls.Add(this.dgvMedicamentos);
             this.groupBox3.Controls.Add(this.txtCantidad);
             this.groupBox3.Controls.Add(this.lblStock);
@@ -233,16 +237,16 @@
             this.groupBox3.Controls.Add(this.btnVolver);
             this.groupBox3.Controls.Add(this.btnAgregar);
             this.groupBox3.Controls.Add(this.btnVender);
-            this.groupBox3.Location = new System.Drawing.Point(12, 329);
+            this.groupBox3.Location = new System.Drawing.Point(12, 194);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(370, 341);
+            this.groupBox3.Size = new System.Drawing.Size(766, 476);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Medicamentos";
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(272, 150);
+            this.txtCantidad.Location = new System.Drawing.Point(483, 147);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(63, 20);
             this.txtCantidad.TabIndex = 5;
@@ -250,7 +254,7 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(129, 153);
+            this.lblStock.Location = new System.Drawing.Point(340, 150);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(41, 13);
             this.lblStock.TabIndex = 4;
@@ -260,7 +264,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(216, 153);
+            this.label16.Location = new System.Drawing.Point(427, 150);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(49, 13);
             this.label16.TabIndex = 4;
@@ -269,7 +273,7 @@
             // lblReceta
             // 
             this.lblReceta.AutoSize = true;
-            this.lblReceta.Location = new System.Drawing.Point(269, 117);
+            this.lblReceta.Location = new System.Drawing.Point(480, 114);
             this.lblReceta.Name = "lblReceta";
             this.lblReceta.Size = new System.Drawing.Size(41, 13);
             this.lblReceta.TabIndex = 4;
@@ -279,7 +283,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(216, 117);
+            this.label14.Location = new System.Drawing.Point(427, 114);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(42, 13);
             this.label14.TabIndex = 4;
@@ -288,7 +292,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(129, 117);
+            this.lblPrecio.Location = new System.Drawing.Point(340, 114);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(41, 13);
             this.lblPrecio.TabIndex = 4;
@@ -298,7 +302,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(37, 153);
+            this.label11.Location = new System.Drawing.Point(248, 150);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 3;
@@ -307,7 +311,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(37, 117);
+            this.label10.Location = new System.Drawing.Point(248, 114);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 13);
             this.label10.TabIndex = 3;
@@ -315,14 +319,14 @@
             // 
             // txtNombreMedicamento
             // 
-            this.txtNombreMedicamento.Location = new System.Drawing.Point(70, 76);
+            this.txtNombreMedicamento.Location = new System.Drawing.Point(281, 73);
             this.txtNombreMedicamento.Name = "txtNombreMedicamento";
             this.txtNombreMedicamento.Size = new System.Drawing.Size(134, 20);
             this.txtNombreMedicamento.TabIndex = 2;
             // 
             // txtCodigoMedicamento
             // 
-            this.txtCodigoMedicamento.Location = new System.Drawing.Point(70, 36);
+            this.txtCodigoMedicamento.Location = new System.Drawing.Point(281, 33);
             this.txtCodigoMedicamento.Name = "txtCodigoMedicamento";
             this.txtCodigoMedicamento.Size = new System.Drawing.Size(134, 20);
             this.txtCodigoMedicamento.TabIndex = 2;
@@ -330,7 +334,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 79);
+            this.label9.Location = new System.Drawing.Point(232, 76);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 1;
@@ -339,7 +343,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 39);
+            this.label5.Location = new System.Drawing.Point(232, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 1;
@@ -347,7 +351,7 @@
             // 
             // btnBuscarMedicamento
             // 
-            this.btnBuscarMedicamento.Location = new System.Drawing.Point(272, 34);
+            this.btnBuscarMedicamento.Location = new System.Drawing.Point(483, 31);
             this.btnBuscarMedicamento.Name = "btnBuscarMedicamento";
             this.btnBuscarMedicamento.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarMedicamento.TabIndex = 0;
@@ -357,7 +361,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(219, 182);
+            this.btnEliminar.Location = new System.Drawing.Point(430, 179);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 0;
@@ -366,7 +370,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(219, 312);
+            this.btnVolver.Location = new System.Drawing.Point(483, 425);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
             this.btnVolver.TabIndex = 0;
@@ -376,7 +380,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(70, 182);
+            this.btnAgregar.Location = new System.Drawing.Point(281, 179);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 0;
@@ -386,7 +390,7 @@
             // 
             // btnVender
             // 
-            this.btnVender.Location = new System.Drawing.Point(70, 312);
+            this.btnVender.Location = new System.Drawing.Point(210, 425);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(75, 23);
             this.btnVender.TabIndex = 0;
@@ -399,7 +403,7 @@
             this.dgvMedicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicamentos.Location = new System.Drawing.Point(6, 211);
             this.dgvMedicamentos.Name = "dgvMedicamentos";
-            this.dgvMedicamentos.Size = new System.Drawing.Size(358, 95);
+            this.dgvMedicamentos.Size = new System.Drawing.Size(754, 159);
             this.dgvMedicamentos.TabIndex = 6;
             // 
             // lblNombreCliente
@@ -412,11 +416,28 @@
             this.lblNombreCliente.Text = "label2";
             this.lblNombreCliente.Visible = false;
             // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(523, 387);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(37, 13);
+            this.lbl2.TabIndex = 7;
+            this.lbl2.Text = "Total: ";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(599, 387);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(0, 13);
+            this.lblTotal.TabIndex = 7;
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 682);
+            this.ClientSize = new System.Drawing.Size(796, 682);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -477,5 +498,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvMedicamentos;
         private System.Windows.Forms.Label lblNombreCliente;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
