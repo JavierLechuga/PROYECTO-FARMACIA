@@ -50,8 +50,9 @@ namespace FormMainMenu
                 XElement numeroventa = xmldoc.Descendants("NumeroVenta").FirstOrDefault();
                 if (numeroventa != null)
                 {
-                    numeroventaint = numeroventaint + 1;
+                    numeroventaint = Convert.ToInt32(numeroventa.Element("numero").Value);
                     numeroventa.Remove();
+                    numeroventaint = numeroventaint + 1;                
                     numeroventa.Element("numero").Value = Convert.ToString(numeroventaint);
                     xmldoc.Root.Add(numeroventa);
                     xmldoc.Save(Application.StartupPath + "\\archivos\\numeroventa.xml");
